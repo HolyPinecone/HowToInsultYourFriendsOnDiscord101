@@ -24,5 +24,7 @@ jobs:
         
     - name: Build and Push the Docker image
       run: |
-        docker build -t $REGISTRY_URL:latest -t $REGISTRY_URL:${{ github.GITHUB_REF_NAME }} .
+        docker build -t $REGISTRY_URL:latest -t $REGISTRY_URL:$VERSION .
         docker push --all-tags $REGISTRY_URL
+      env:
+        VERSION: ${{ github.GITHUB_REF_NAME }}
