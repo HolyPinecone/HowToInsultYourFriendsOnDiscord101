@@ -87,7 +87,10 @@ const question = (q) => new Promise((resolve) => rl.question(q, resolve));
 (async ()=>{
     const token = 'get your own fucking token';
     if(!token) throw new Error('Invalid token');
+
+    //this might or might not work without fiddling w my diddle
     const { default: fetch } = await import('node-fetch');
+
     const ratelimitTest = await fetch(`https://discord.com/api/v9/invites/discord-developers`);
 
     if(!ratelimitTest.ok) {

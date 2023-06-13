@@ -5,7 +5,7 @@ class CrazyCommand extends BaseCommand {
     get definition() {
         return {
             name: 'crazy',
-            description: 'craaaazy...'
+            description: 'this is crazy'
         }
     }
 
