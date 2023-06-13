@@ -1,4 +1,4 @@
-const BaseCommand = require('../base/base-command')
+const BaseCommand = require("../base/base-command");
 
 //These r lowkey violent songs man
 const randURLs = [
@@ -35,20 +35,19 @@ const randURLs = [
     "https://open.spotify.com/track/0ymSV3rbBr6jfNl44twiOb?si=771e4e7cd9174b21",
     "https://open.spotify.com/track/70fiaCGcCBWCGKXXISgdJf?si=59503a2d68224d9c",
     "https://open.spotify.com/track/6pCkJ0r6WEyz5ASErk5ezS?si=8290d18b4b684368",
-    "https://open.spotify.com/track/6RcsAN8XF5KX6mMh6dum8e?si=5b707d50761c4bfd"
+    "https://open.spotify.com/track/6RcsAN8XF5KX6mMh6dum8e?si=5b707d50761c4bfd",
 ];
 
 class SongCommand extends BaseCommand {
-
     get definition() {
         return {
-            name: 'song',
-            description: 'random violent song'
-        }
+            name: "song",
+            description: "random violent song",
+        };
     }
 
     execute(interaction) {
-        let randNumber = Math.floor(Math.random()*randURLs.length);
+        let randNumber = Math.floor(Math.random() * randURLs.length);
         interaction.reply(`${randURLs[randNumber]}`);
     }
 }

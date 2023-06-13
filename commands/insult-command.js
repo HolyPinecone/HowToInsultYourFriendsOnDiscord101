@@ -1,14 +1,13 @@
-const insulter = require('insult');
+const insulter = require("insult");
 
-const BaseCommand = require('../base/base-command')
+const BaseCommand = require("../base/base-command");
 
 class InsultCommand extends BaseCommand {
-
     get definition() {
         return {
-            name: 'insult',
-            description: 'Random insults'
-        }
+            name: "insult",
+            description: "Random insults",
+        };
     }
 
     execute(interaction) {
