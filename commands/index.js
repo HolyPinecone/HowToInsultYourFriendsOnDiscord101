@@ -1,3 +1,4 @@
+//i assume u dont understand u gotta add the commands here for them to wörk
 const commandHandlers = [
     require('./insult-command'),
     require("./meme-command"),
