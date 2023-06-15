@@ -1,9 +1,27 @@
 {
-  "dependencies": {
-    "axios": "^1.4.0",
-    "discord.js": "^14.11.0",
-    "dotenv": "^16.1.4",
-    "insult": "github:SydneyRain/insult",
-    "node-fetch": "^3.3.1"
-  }
+    "name": "howtoinsultyourfriendsondiscord101",
+    "version": "1.0.0",
+    "description": "This bot is created to ruin everyone's day on your discord server\r because humans suck and everyone should suffer oke?",
+    "author": "HolyPinecone <136019832+HolyPinecone@users.noreply.github.com>",
+    "keywords": [],
+    "private": true,
+    "main": "app.js",
+    "license": "MIT",
+    "scripts": {
+        "dev": "nodemon ./src/app.js",
+        "start": "node ./src/app.js"
+    },
+    "dependencies": {
+        "discord.js": "^14.11.0",
+        "dotenv": "^16.1.4",
+        "insult": "^0.0.3"
+    },
+    "devDependencies": {
+        "eslint": "^8.42.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "nodemon": "^2.0.22",
+        "prettier": "2.8.8"
+    }
 }
+

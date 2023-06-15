@@ -1,0 +1,30 @@
+name: Docker Image CI
+
+on:
+  push:
+    tags:
+      - v*
+
+env:
+  REGISTRY_URL: ghcr.io/${{ github.repository_owner }}/htiyfod
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        
+    - name: Build and Push the Docker image
+      run: |
+        docker build -t $REGISTRY_URL:latest -t $REGISTRY_URL:$VERSION .
+        docker push --all-tags $REGISTRY_URL
+      env:
+        VERSION: ${{ github.ref_name }}
