@@ -5,9 +5,6 @@ on:
     tags:
       - v*
 
-env:
-  REGISTRY_URL: ghcr.io/${{ github.repository_owner }}/htiyfod
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,6 +21,7 @@ jobs:
         
     - name: Build and Push the Docker image
       run: |
+        REGISTRY_URL=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/htiyfod
         docker build -t $REGISTRY_URL:latest -t $REGISTRY_URL:$VERSION .
         docker push --all-tags $REGISTRY_URL
       env:
