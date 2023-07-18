@@ -4,6 +4,7 @@ const commandHandlers = [
     require("./meme-command"),
     require("./song-command"),
     require("./crazy-command"),
+    require("./triggers-command"),
 ];
 
 const handlers = commandHandlers.reduce(
