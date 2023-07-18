@@ -35,6 +35,11 @@ client.on("messageCreate", (msg) => {
 
     // make a string variable and make message lowercase
     const content = msg.content.toLowerCase();
+    const sanitized = content.replace(
+        /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi,
+        ""
+    );
+    const tokens = new Set(sanitized.split(" "));
 
     // make the bot insult someone everytime they send smth
     let fuckYou = [
@@ -49,24 +54,24 @@ client.on("messageCreate", (msg) => {
         return;
     }
     //mega funny ways to make the bot insult everyone on the server based on stupid shit they say:
-    if (content.includes("crazy")) {
+    if (tokens.has("crazy")) {
         msg.channel.send(
             "Crazy? I was crazy once. They locked me in a room. A rubber room. A rubber room filled with rats and the rats made me crazy."
         );
     }
-    if (content.includes("toxic")) {
+    if (tokens.has("toxic")) {
         msg.channel.send("Why you being toxic? Personally I would never.");
     }
     if (content === "hi") {
         msg.channel.send("no, shut up, go away");
     }
-    if (content.includes("hello")) {
+    if (tokens.has("hello")) {
         msg.channel.send("no, shut up, go away");
     }
     if (content === "hey") {
         msg.channel.send("no, shut up, go away");
     }
-    if (content.includes("morning")) {
+    if (tokens.has("morning")) {
         msg.channel.send("quiet, go back to sleep");
     }
     if (content === "gm") {
@@ -74,7 +79,7 @@ client.on("messageCreate", (msg) => {
             "quiet, go back to sleep. U still seem to be too tired to write u lazy fuck."
         );
     }
-    if (content.includes("night")) {
+    if (tokens.has("night")) {
         msg.channel.send("sleep is for the weak pussy");
     }
     if (content === "gn") {
@@ -82,19 +87,19 @@ client.on("messageCreate", (msg) => {
             "No need to wake up until you start writing properly you lazy fuck."
         );
     }
-    if (content.includes("imagine")) {
+    if (tokens.has("imagine")) {
         msg.channel.send("Stop imagining pussy, this is reality");
     }
-    if (content.includes("bye")) {
+    if (tokens.has("bye")) {
         msg.channel.send("bye! No need to come back!");
     }
-    if (content.includes("food")) {
+    if (tokens.has("food")) {
         msg.channel.send("No food for you, you fat fuck!");
     }
-    if (content.includes("eat")) {
+    if (tokens.has("eat")) {
         msg.channel.send("No food for you, you fat fuck!");
     }
-    if (content.includes("surströmming")) {
+    if (tokens.has("surströmming")) {
         msg.channel.send("Ew wtf stop opening your legs. U nasty hoe.");
     }
 });
